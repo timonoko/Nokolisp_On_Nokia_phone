@@ -1,0 +1,96 @@
+Microsoft (R) Macro Assembler Version 5.10                  5/22/3
+                                                             Page     1-1
+
+
+       1 0000				code	SEGMENT  public
+       2 0100					ORG	100H
+       3					ASSUME	CS:code, DS:code, ES:co
+					de
+       4				
+       5 0100  EB 21 90			IIK:	JMP	ALKU
+       6				
+       7 0103  0000			VANHA 	DW 0
+       8 0105  0000			VANHA2	DW 0
+       9				
+      10				
+      11 0107				INTTI:
+      12 0107  90				NOP
+      13 0108  90				NOP
+      14 0109  9C				PUSHF                          
+					    
+      15 010A  80 FC 0B				cmp	AH,0BH
+      16 010D  74 0A				jz	NOTOHI
+      17 010F  80 FC 0F				cmp	AH,0FH
+      18 0112  74 05				JZ	NOTOHI
+      19 0114  80 FC 00				cmp	AH,0
+      20 0117  75 04				JNZ	OHI
+      21 0119  B4 50			NOTOHI: MOV 	AH,80
+      22 011B  B0 06				MOV	Al,6
+      23 011D  9D			OHI:	POPF	                       
+					            
+      24					;JMP	FAR CS:[VANHA]         
+					                
+      25 011E  2E FF 2E 03 01			db 2EH,0FFH,2EH,03H,01H   
+      26				
+      27 0123  B8 3510			ALKU:	MOV	AX,3510H               
+					             
+      28 0126  CD 21				INT	21H                    
+					             
+      29 0128  89 1E 0103 R			MOV	[VANHA],BX             
+					             
+      30 012C  8C 06 0105 R			MOV	[VANHA2],ES            
+					              
+      31 0130  BA 0107 R			MOV	DX,OFFSET INTTI        
+					                   
+      32 0133  B8 2510				MOV	AX,2510H               
+					             
+      33 0136  CD 21				INT	21H                    
+					             
+      34 0138  BA 0123 R			MOV	DX,OFFSET ALKU         
+					                   
+      35 013B  CD 27				INT	27H                    
+					             
+      36				
+      37				
+      38				
+      39 013D				code	ENDS
+      40					END IIK
+Microsoft (R) Macro Assembler Version 5.10                  5/22/3
+                                                             Symbols-1
+
+
+Segments and Groups:
+
+                N a m e         	Length	 Align	Combine Class
+
+CODE . . . . . . . . . . . . . .  	013D	PARA	PUBLIC	
+
+Symbols:            
+
+                N a m e         	Type	 Value	 Attr
+
+ALKU . . . . . . . . . . . . . .  	L NEAR	0123	CODE
+
+IIK  . . . . . . . . . . . . . .  	L NEAR	0100	CODE
+INTTI  . . . . . . . . . . . . .  	L NEAR	0107	CODE
+
+NOTOHI . . . . . . . . . . . . .  	L NEAR	0119	CODE
+
+OHI  . . . . . . . . . . . . . .  	L NEAR	011D	CODE
+
+VANHA  . . . . . . . . . . . . .  	L WORD	0103	CODE
+VANHA2 . . . . . . . . . . . . .  	L WORD	0105	CODE
+
+@CPU . . . . . . . . . . . . . .  	TEXT  0101h		
+@FILENAME  . . . . . . . . . . .  	TEXT  nokint10		
+@VERSION . . . . . . . . . . . .  	TEXT  510		
+
+
+     40 Source  Lines
+     40 Total   Lines
+     13 Symbols
+
+  46278 Bytes symbol space free
+
+      0 Warning Errors
+      0 Severe  Errors

@@ -1,0 +1,16 @@
+BTW. Interesting feature of this phone was it had adjustable clock
+speed from 8 Mhz to 198 Mhz.  It offered interested dilemmas as you
+had to choose at which speed you should execute a function.  You could
+run (hyper-speed) only few seconds before the CPU started to smoke,
+which was kind of dangerous. Error-trap started of course with
+(slow-clock).
+
+    grep defun nokia.lsp 
+    (defun suspend () 
+    (defun super-slow ()
+    (defun slow-clock ()
+    (defun fast-clock 
+    (defun hyper-speed () 
+    (defun backlight
+    (defun lid-on? ()
+    (defun phone-on? ()

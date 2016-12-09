@@ -1,0 +1,3 @@
+
+cd A:\NOKIA\DOCUMENT\MMC\DATA
+pic
