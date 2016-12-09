@@ -6,5 +6,6 @@ Nokolisp is running alone using direct BIOS-calls.
 
 This was done in emergency in backcountry, because bloody MSDOS-file was corrupted.
 
-Contains much strangeness, like adjusting processor clock intelligently.
+Contains much strangeness, like adjusting processor clock intelligently.  (see Minidos.lsp: close-lid-readcc)
+
 
