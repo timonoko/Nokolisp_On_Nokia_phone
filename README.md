@@ -8,4 +8,4 @@ This was done in emergency in backcountry, because bloody MSDOS-file was corrupt
 
 Contains much strangeness, like adjusting processor clock intelligently.  (see Minidos.lsp: close-lid-readcc)
 
-<img commu.jpg>
+<img src=commu.jpg>
